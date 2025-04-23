@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-dev-inspector-no-fragment",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "description": "jump to local IDE source code while click the element of browser automatically.",
   "author": "jinjun",
   "license": "MIT",

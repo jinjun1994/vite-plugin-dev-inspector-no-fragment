@@ -81,8 +81,15 @@ export async function compileSFCTemplate(
             if (node.type === 'JSXElement') {
               // 新增Fragment判断逻辑
               const elementName = node.openingElement.name
-              const isFragment = elementName.type === 'JSXIdentifier'
-                && (elementName.name === 'Fragment' || elementName.name === 'React.Fragment')
+              const isFragment = 
+                // 处理普通Fragment
+                (elementName.type === 'JSXIdentifier' && elementName.name === 'Fragment') ||
+                // 处理React.Fragment
+                (elementName.type === 'JSXMemberExpression' && 
+                 elementName.object.type === 'JSXIdentifier' &&
+                 elementName.object.name === 'React' &&
+                 elementName.property.type === 'JSXIdentifier' &&
+                 elementName.property.name === 'Fragment')
 
               if (isFragment) return // 跳过Fragment元素
               if (node.openingElement.attributes.some(attr => attr.type !== 'JSXSpreadAttribute' && attr.name.name === KEY_DATA,
