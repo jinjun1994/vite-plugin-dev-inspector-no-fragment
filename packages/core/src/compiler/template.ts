@@ -79,6 +79,12 @@ export async function compileSFCTemplate(
         babelTraverse(ast, {
           enter({ node }) {
             if (node.type === 'JSXElement') {
+              // 新增Fragment判断逻辑
+              const elementName = node.openingElement.name
+              const isFragment = elementName.type === 'JSXIdentifier'
+                && (elementName.name === 'Fragment' || elementName.name === 'React.Fragment')
+
+              if (isFragment) return // 跳过Fragment元素
               if (node.openingElement.attributes.some(attr => attr.type !== 'JSXSpreadAttribute' && attr.name.name === KEY_DATA,
               ))
                 return

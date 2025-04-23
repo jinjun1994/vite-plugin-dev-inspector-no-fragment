@@ -1,16 +1,16 @@
 {
-  "name": "vite-plugin-dev-inspector",
-  "version": "2.2.7",
+  "name": "vite-plugin-dev-inspector-no-fragment",
+  "version": "2.2.8",
   "description": "jump to local IDE source code while click the element of browser automatically.",
-  "author": "xsf0105",
+  "author": "jinjun",
   "license": "MIT",
-  "homepage": "https://github.com/hellof2e/vite-plugin-dev-inspector#readme",
+  "homepage": "https://github.com/jinjun1994/vite-plugin-dev-inspector-no-fragment#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hellof2e/vite-plugin-dev-inspector.git"
+    "url": "git+https://github.com/jinjun1994/vite-plugin-dev-inspector-no-fragment.git"
   },
   "bugs": {
-    "url": "https://github.com/hellof2e/vite-plugin-dev-inspector/issues"
+    "url": "https://github.com/jinjun1994/vite-plugin-dev-inspector-no-fragment/issues"
   },
   "keywords": [
     "vue",

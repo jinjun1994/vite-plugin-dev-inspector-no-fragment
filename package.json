@@ -1,6 +1,6 @@
 {
   "private": true,
-  "author": "xsf0105",
+  "author": "jinjun",
   "license": "MIT",
   "scripts": {
     "play:react": "pnpm run -r --filter=./packages/playground/react dev",
