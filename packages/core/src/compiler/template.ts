@@ -92,6 +92,15 @@ export async function compileSFCTemplate(
                  elementName.property.name === 'Fragment')
 
               if (isFragment) return // 跳过Fragment元素
+
+              // 判断是否为自定义 Web Component（以小写字母开头且包含连字符）
+              const isWebComponent = 
+                elementName.type === 'JSXIdentifier' && 
+                /^[a-z]/.test(elementName.name) && 
+                elementName.name.includes('-')
+
+              if (isWebComponent) return // 跳过自定义 Web Component
+
               if (node.openingElement.attributes.some(attr => attr.type !== 'JSXSpreadAttribute' && attr.name.name === KEY_DATA,
               ))
                 return
